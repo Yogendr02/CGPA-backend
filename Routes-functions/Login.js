@@ -5,7 +5,6 @@ const jt = require("jsonwebtoken");
 const login = async (req, res) => {
   const user = await signupmod.signupmodel.findOne({
     reg: req.body.reg,
-    user: "User"
   });
   if (user) {
     const compro =  await bcrypt.compare(req.body.password,user.password,)
